@@ -1,0 +1,21 @@
+{% extends "project/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h3>{{get_post.title}}
+        </h3>
+        
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <img src="/media/{{ get_post.img }}" width="600",height="600"><br><br>
+        <p>{{get_post.description}}
+        </p>
+        <p>
+            Article Tags: {{get_post.technology}}
+        </p>
+    </div>
+</div>
+
+{% endblock %}
