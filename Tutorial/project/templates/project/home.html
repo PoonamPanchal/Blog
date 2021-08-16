@@ -1,12 +1,15 @@
 {% extends "project/base.html" %}
+{% block meta %}
+{% endblock %}
+
 {% block content %}
 <div class="row">
     {% for post in all_posts %}
     <div class="col-md-4">
         <div class="card">
             <img class="card-img-top" src="/media/{{ post.img }}">
-            <div class="card-body">
-                <h5 class="card-title text-center">{{ post.title }}</h5>
+            <div class="card-body text-center">
+                <h5 class="card-title ">{{ post.title }}</h5>
                 <a href="{{ post.get_absolute_url }}" class="btn btn-primary">
                     Read More
                 </a>
