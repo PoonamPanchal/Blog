@@ -3,6 +3,7 @@ from django.db.models.fields import CharField
 from django.urls import reverse
 from datetime import datetime
 from django.contrib.auth.models import User
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 STATUS = (
@@ -26,7 +27,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, blank=True)
     updated_on = models.DateTimeField(auto_now=True, blank=True)
     title = models.CharField(max_length=100, default='', null=False)
-    description = models.TextField(default='', null=False)
+    description = RichTextUploadingField(default='',null=False)
     slug = models.SlugField(null=False, unique=True, default='')
     status = models.IntegerField(choices=STATUS, default=0)
     img = models.ImageField(upload_to='images/')
